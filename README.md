@@ -12,47 +12,47 @@ Here are the steps necessary to get everything running on the production.
 
 (1) Download Medieval Philosophy Timeline application from GitHub - 
   
-  $ git clone git@heroku.com:medieval-philosophy-timeline.git
+    $ git clone git@heroku.com:medieval-philosophy-timeline.git
  
 (2) Run bundle to install all gems and "rake db:migrate" to set up database.
 
 (3) Add this to Add this to application.rb file to allow deployment to Heroku. No local or Heroku "rake:assets:precompile" is necessary 
 
-  config.serve_static_assets = true
+    config.serve_static_assets = true
     config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
     config.assets.compile = true
 
 (4) Add this to application.rb file to allow localization
   
-  I18n.default_locale = :en
+    I18n.default_locale = :en
     I18n.available_locales = [:en, :ru, :he]
     I18n.load_path = Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     I18n.enforce_available_locales = false
 
 (5) Create new Git repository for the project
 
-  $ git init
-  $ git add .
-  $ git commit -m "init"
-  $ git push --set-upstream https://github.com/lesoto/medieval-philosophy-timeline.git master
-
+    $ git init
+    $ git add .
+    $ git commit -m "init"
   
-  $ git remote add origin https://github.com/lesoto/medieval-philosophy-timeline.git
-  $ git push -u origin master
+    $ git push --set-upstream https://github.com/lesoto/medieval-philosophy-timeline.git master
+  
+    $ git remote add origin https://github.com/lesoto/medieval-philosophy-timeline.git
+    $ git push -u origin master
 
 (6) Create Heroku application
 
-  $ heroku create
-  $ heroku apps:rename newname
-  $ git push heroku master
+    $ heroku create
+    $ heroku apps:rename newname
+    $ git push heroku master
 
 (7) Database creation and upload
-  $ heroku config | grep HEROKU_POSTGRESQL
-  $ heroku pg:push whitecrow HEROKU_POSTGRESQL_GRAY_URL
-  $ heroku run rake db:migrate
+    $ heroku config | grep HEROKU_POSTGRESQL
+    $ heroku pg:push whitecrow HEROKU_POSTGRESQL_GRAY_URL
+    $ heroku run rake db:migrate
 
 (8) Monitor status of the application by running 
-  $ heroku logs
+    $ heroku logs
 
 (9) Using JSON to store data to display:
     <script>
@@ -78,9 +78,9 @@ Here are the steps necessary to get everything running on the production.
             format.json { render json: json_out = {
               "timeline"=>
               {
-                "headline"=>"The Main Timeline Headline Goes here",
+                "headline"=>"Medieval Philosophy Timeline",
                 "type"=>"default",
-                "text"=>"<p>Intro body text goes here, some HTML is ok</p>",
+                "text"=>"<p>Intro text</p>",
                 "asset"=> {
                 "media"=>"http://www.exglam.com/wp-content/uploads/2013/02/Kajal-agarwal-in-Blue-and-white-Fade-Short-with-white-Top-and-a-Blue-bow-in-hair.jpg",
                 "credit"=>"Credit Name Goes Here",
