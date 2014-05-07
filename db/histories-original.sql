@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS "histories-original";
+CREATE TABLE "histories-original" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "startdate" datetime, "enddate" datetime, "content" varchar(255), "headline" varchar(255), "media" varchar(255), "mediacaption" varchar(255), "mediacredit" varchar(255), "created_at" datetime, "updated_at" datetime);
+INSERT INTO "histories-original" VALUES(1,'2014-02-07 00:00:00.000000','2014-02-23 00:00:00.000000','Sochi Olympics','Winter Olympics in Sochi ','https://www.youtube.com/watch?v=qKByVp3gjJA','Closing Ceremony','Ura','2014-02-25 01:08:04.639226','2014-02-25 01:08:04.639226');

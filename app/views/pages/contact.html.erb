@@ -1,0 +1,20 @@
+<p><%= t('contact.main_text') %></p>
+<form>
+  <div>
+		<div>
+			<label><%= t('contact.form_labels.first_name') %></label>
+			<input type="text" placeholder="<%= t('contact.form_labels.first_name') %>">
+			<label><%= t('contact.form_labels.last_name') %></label>
+			<input type="text" placeholder="<%= t('contact.form_labels.last_name') %>">
+			<label><%= t('contact.form_labels.email') %></label>
+			<input type="text" placeholder="<%= t('contact.form_labels.email') %>">
+		</div>
+		<div>
+			<label><%= t('contact.form_labels.message') %></label>
+			<textarea name="message" id="message" rows="5" placeholder="<%= t('contact.form_labels.message') %>"></textarea>
+		</div>
+		<div>	
+			<button type="submit"><%= t('contact.form_labels.send') %></button>
+		</div>
+	</div>
+</form>

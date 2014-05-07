@@ -1,0 +1,27 @@
+<h5>Timeline Header</h5>
+
+<%= link_to 'Create Timeline', new_history_path, :class => "btn btn-primary" %>
+<br />
+
+<br />
+<script>
+  $(document).ready(function() {
+    createStoryJS({
+      type:       'timeline',
+      width:      '1200',
+      height:     '500',
+      source:     '<%= @histories %>',
+      //source:	  './philosophers.json',
+      embed_id:   'my-timeline',
+      start_at_end:       false,  
+      start_at_slide:     '1',                           
+      start_zoom_adjust:  '-3',   
+      hash_bookmark:      true,  
+      //font:               'Bevan-PotanoSans',  
+      debug:              true,   
+      lang:               'ru',   
+      maptype:            'watercolor'                
+    });
+  });
+</script>
+<div id="my-timeline"></div>
